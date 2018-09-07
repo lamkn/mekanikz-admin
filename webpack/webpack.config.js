@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   context: path.join(__dirname, '../'),
@@ -49,6 +50,14 @@ module.exports = {
         use: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(scss|sass|css)$/i,
+        use: ['style-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
+        test: /\.(woff|woff2?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: "file-loader?name=fonts/[name].[ext]"
+      }
     ]
   },
 }
