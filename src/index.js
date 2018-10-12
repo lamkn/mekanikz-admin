@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom'
 import Login from './components/Login/Login'
 import './styles/index.scss';
 import { HashRouter, Switch, Route } from 'react-router-dom'
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
+import Home from './components/Home/Home'
 
 ReactDOM.render((
   <HashRouter>
